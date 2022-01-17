@@ -5,13 +5,13 @@
 
 when CLIENTSSL_HANDSHAKE {
     if { [IP::addr [IP::client_addr] equals 1.1.1.1] } {
-	    log local0.info "Client Side: RSA Session-ID:[SSL::sessionid] Master-Key:[SSL::sessionsecret]"
+        log local0.info "Client Side: RSA Session-ID:[SSL::sessionid] Master-Key:[SSL::sessionsecret]"
     }
 }
 
 when SERVERSSL_HANDSHAKE {
-	  if { [IP::addr [IP::client_addr] equals 1.1.1.1] } {
-	     log local0.info "Server Side: RSA Session-ID:[SSL::sessionid] Master-Key:[SSL::sessionsecret]"
+    if { [IP::addr [IP::client_addr] equals 1.1.1.1] } {
+	log local0.info "Server Side: RSA Session-ID:[SSL::sessionid] Master-Key:[SSL::sessionsecret]"
     }
 }
 
